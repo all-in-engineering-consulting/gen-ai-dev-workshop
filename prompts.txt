@@ -1,0 +1,21 @@
+Here's a transcript of the video:
+
+```text
+
+```
+
+I need you to break it down into meaningful parts and name each.
+
+Output the result in a valid json format with the following structure:
+
+```json
+
+[
+
+{"name": "[part 1 name]", "start": "[first 7 words of the part]", "finish": "[last 7 words of the part]"(parts can intersect for not more than 20%) }
+
+]
+
+```
+
+---------------------------------
