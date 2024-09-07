@@ -247,7 +247,7 @@ def text_to_sql_results(question, db):
     execution_time = time.time() - start_time
     debug_info(f"SQL query execution time: {execution_time:.4f} seconds")
 
-    return res
+    return res, sql_query
 
 
 def text_to_sql_agent(chat_history: List[Union[BaseMessage, SystemMessage]], db):
@@ -277,7 +277,7 @@ def text_to_sql_agent(chat_history: List[Union[BaseMessage, SystemMessage]], db)
     debug_info(f"DEBUG: Full question creation execution time: {execution_time:.4f} seconds")
 
     start_time = time.time()
-    sql_results_str = text_to_sql_results(full_question, db)
+    sql_results_str, sql_query = text_to_sql_results(full_question, db)
     execution_time = time.time() - start_time
     debug_info(f"DEBUG: SQL query execution time: {execution_time:.4f} seconds")
 
@@ -300,7 +300,7 @@ def text_to_sql_agent(chat_history: List[Union[BaseMessage, SystemMessage]], db)
     execution_time = time.time() - start_time
     debug_info(f"DEBUG: SQL results to human readable answer execution time: {execution_time:.4f} seconds")
 
-    return ai_response_sql_results.content
+    return ai_response_sql_results.content + f"\n\n[SQL query:\n{sql_query}]"
 
 
 def router(latest_user_message: HumanMessage, current_agent: str):
