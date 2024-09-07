@@ -25,7 +25,7 @@ from general_functions import extract_fenced_text, faiss_index
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
-def debug_info(message, to_print=True):
+def debug_info(message, to_print=False):
     if to_print:
         print(f"DEBUG: {message}\n")
 
