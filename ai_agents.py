@@ -374,7 +374,7 @@ def bemyapp_agent(question, current_agent, text2sql_chat_history, vdb_multimodal
             end_time = time.time()
             execution_time = end_time - start_time
             debug_info(f"DEBUG: Multimodal RAG agent execution time: {execution_time:.4f} seconds")
-            return {"next_agent": current_agent, "answer": answer + f"\n\n[Results from video transcript:\n{results_transcript_string}\n]\n\n[Results from video media:\n{results_media_string}\n]"}
+            return {"next_agent": current_agent, "answer": answer, "results_transcript_string": f"\n\n[Results from video transcript:\n{results_transcript_string}\n]\n\n", "results_media_string": f"\n\n[Results from video media:\n{results_media_string}\n]"}
         elif current_agent == "recursive_rag_agent":
             start_time = time.time()
             answer = recursive_rag_agent(question, vdb_recursive)
