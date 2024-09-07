@@ -170,8 +170,8 @@ def multimodal_rag_agent(question, vdb):
         filter={"type": "transcript_chunk"},
     )
 
-    results_media_string = "\n--\n\n".join([f"Context piece: {res.page_content} [{res.metadata}]" for res in results_media])
-    results_transcript_string = "\n--\n\n".join([f"Context piece: {res.page_content} [{res.metadata}]" for res in results_transcript])
+    results_media_string = "\n--\n\n".join([f"Context piece (media): {res.page_content} [{res.metadata}]" for res in results_media])
+    results_transcript_string = "\n--\n\n".join([f"Context piece (transcript): {res.page_content} [{res.metadata}]" for res in results_transcript])
 
     prompt_template = """
         Here's the user's question: {question}.
@@ -203,7 +203,7 @@ def multimodal_rag_agent(question, vdb):
         "results_media_string": results_media_string,
     })
 
-    return answer.content
+    return answer.content, results_transcript_string, results_media_string
 
 
 def text_to_sql_results(question, db):
@@ -370,11 +370,11 @@ def bemyapp_agent(question, current_agent, text2sql_chat_history, vdb_multimodal
             return {"next_agent": current_agent, "answer": answer}
         elif current_agent == "multimodal_rag_agent":
             start_time = time.time()
-            answer = multimodal_rag_agent(question, vdb_multimodal)
+            answer, results_transcript_string, results_media_string = multimodal_rag_agent(question, vdb_multimodal)
             end_time = time.time()
             execution_time = end_time - start_time
             debug_info(f"DEBUG: Multimodal RAG agent execution time: {execution_time:.4f} seconds")
-            return {"next_agent": current_agent, "answer": answer}
+            return {"next_agent": current_agent, "answer": answer + f"\n\n[Results from video transcript:\n{results_transcript_string}\n]\n\n[Results from video media:\n{results_media_string}\n]"}
         elif current_agent == "recursive_rag_agent":
             start_time = time.time()
             answer = recursive_rag_agent(question, vdb_recursive)
