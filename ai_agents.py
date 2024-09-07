@@ -25,7 +25,7 @@ from general_functions import extract_fenced_text, faiss_index
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
-def debug_info(message, to_print=False):
+def debug_info(message, to_print=True):
     if to_print:
         print(f"DEBUG: {message}\n")
 
@@ -241,11 +241,11 @@ def text_to_sql_results(question, db):
 
     sql_query = extract_fenced_text(response)
 
-    # start_time = time.time()
+    start_time = time.time()
     # Execute the SQL query
     res = db.run(sql_query)
-    # execution_time = time.time() - start_time
-    # debug_info(f"SQL query execution time: {execution_time:.4f} seconds")
+    execution_time = time.time() - start_time
+    debug_info(f"SQL query execution time: {execution_time:.4f} seconds")
 
     return res
 
