@@ -47,6 +47,7 @@ def recursive_rag_agent(question, vdb):
     )
     results_string = "\n".join([f"Context piece {i}:\n{res.page_content}\n--\n" for i, res in enumerate(results)])
 
+    # print(f"DEBUG: results_string: {results_string}")
 
     simplify_question_prompt = SystemMessage(
         content="""
@@ -69,8 +70,8 @@ def recursive_rag_agent(question, vdb):
     except:
         simplified = json.loads(simplified_question_response.content)
 
-    debug_info(f"\n\n\n simplified question: {simplified} \n\n\n")
-
+    # debug_info(f"\n\n\n simplified question: {simplified} \n\n\n")
+    # simplified = {"question": question, "company_name": "CreativeMind"}
 
     prompt_template = """
         Your role is to answer user's questions related to legal agreements with their company (Innovate Spaces Corporation).
@@ -111,34 +112,37 @@ def recursive_rag_agent(question, vdb):
         json_response = None
 
     if json_response:
-        debug_info(f"...DEBUG: json_response: {json_response}")
+        print("THINKING: didn't find all the information needed in the first batch of chunks, looking for more based on the initially received chunks.")
+
+        # debug_info(f"...DEBUG: json_response: {json_response}")
         for res in json_response['relevant_context_pieces']:
             if results[res['index']].metadata['agreement'] not in relevant_results:
                 relevant_results[results[res['index']].metadata['agreement']] = []
             relevant_results[results[res['index']].metadata['agreement']].append(results[res['index']])
-        debug_info(f"Agreements: {relevant_results}")
+        # debug_info(f"Agreements: {relevant_results}")
 
         for agreement, result in relevant_results.items():
-            debug_info(f"Agreement: {agreement}")
+            # debug_info(f"Agreement: {agreement}")
+            # print(f"Agreement: {agreement}")
             vdb_contractor_results = vdb.similarity_search(
                 "what are the parties of this agreement?",
                 k=1,
                 filter={"agreement": agreement}
             )
             for res in vdb_contractor_results:
-                debug_info(f"VDB contractor result: {res.page_content}\n")
+                # debug_info(f"VDB contractor result: {res.page_content}\n")
                 relevant_results[agreement].append(res)
             # debug_info("\n\n")
 
-            # debug_info(f"Relevant results: {relevant_results[agreement]}")
-            # debug_info(f"\n\n")
+            # print(f"Relevant results: {relevant_results[agreement]}")
+            # print(f"\n\n")
 
             answer = chain.invoke({
                 "question": question,
                 "context": relevant_results[agreement]
             })
-            debug_info(f"Answer: {answer.content}")
-            debug_info(f"\n\n")
+            # debug_info(f"Answer: {answer.content}")
+            # debug_info(f"\n\n")
 
             json_response = extract_fenced_text(answer.content)
             try:
@@ -146,7 +150,7 @@ def recursive_rag_agent(question, vdb):
             except:
                 json_response = None
             if not json_response:
-                return answer.content
+                return answer.content#, results_string
 
 
         # debug_info(f"Relevant results: {relevant_results}")
@@ -245,7 +249,7 @@ def text_to_sql_results(question, db):
     # Execute the SQL query
     res = db.run(sql_query)
     execution_time = time.time() - start_time
-    debug_info(f"SQL query execution time: {execution_time:.4f} seconds")
+    # debug_info(f"SQL query execution time: {execution_time:.4f} seconds")
 
     return res, sql_query
 
@@ -309,7 +313,7 @@ def router(latest_user_message: HumanMessage, current_agent: str):
 
         There are 3 agents available:
         1. Recursive RAG agent (for questions about agreements) (name for json: recursive_rag_agent)
-        2. Multimodal RAG agent (for questions about the video) (name for json: multimodal_rag_agent)
+        2. Multimodal RAG agent (for questions about the video about ITM) (name for json: multimodal_rag_agent)
         3. Text to SQL agent (for questions about the database of financial data) (name for json: text_to_sql_agent)
 
         Current agent the user is talking to: {current_agent}.
@@ -336,9 +340,9 @@ def router(latest_user_message: HumanMessage, current_agent: str):
         ai_response_json = json.loads(extract_fenced_text(ai_response.content))
         return ai_response_json['agent']
     except:
-        debug_info(f"ERROR")
-        debug_info(f"DEBUG: ai_response: {ai_response}")
-        debug_info(f"DEBUG: extract_fenced_text(ai_response): {extract_fenced_text(ai_response)}")
+        # debug_info(f"ERROR", to_print=debug_to_print)
+        # debug_info(f"DEBUG: ai_response: {ai_response}", to_print=debug_to_print)
+        # debug_info(f"DEBUG: extract_fenced_text(ai_response): {extract_fenced_text(ai_response)}", to_print=debug_to_print)
         return "current"
 
 
@@ -352,37 +356,38 @@ def bemyapp_agent(question, current_agent, text2sql_chat_history, vdb_multimodal
 
     end_time = time.time()
     execution_time = end_time - start_time
-    debug_info(f"DEBUG: Router execution time: {execution_time:.4f} seconds")
+    # debug_info(f"DEBUG: Router execution time: {execution_time:.4f} seconds", to_print=debug_to_print)
 
     # debug_info(f"DEBUG: router_response: {router_response}")
     # switch_to_agent = json.loads(extract_fenced_text(router_response))['agent']
 
 
-    if router_response == "current":
-    
-    
-        if current_agent == "text_to_sql_agent":
-            start_time = time.time()
-            answer = text_to_sql_agent(text2sql_chat_history, db)
-            end_time = time.time()
-            execution_time = end_time - start_time
-            debug_info(f"DEBUG: Text to SQL agent execution time: {execution_time:.4f} seconds")
-            return {"next_agent": current_agent, "answer": answer}
-        elif current_agent == "multimodal_rag_agent":
-            start_time = time.time()
-            answer, results_transcript_string, results_media_string = multimodal_rag_agent(question, vdb_multimodal)
-            end_time = time.time()
-            execution_time = end_time - start_time
-            debug_info(f"DEBUG: Multimodal RAG agent execution time: {execution_time:.4f} seconds")
-            return {"next_agent": current_agent, "answer": answer, "results_transcript_string": f"\n\n[Results from video transcript:\n{results_transcript_string}\n]\n\n", "results_media_string": f"\n\n[Results from video media:\n{results_media_string}\n]"}
-        elif current_agent == "recursive_rag_agent":
-            start_time = time.time()
-            answer = recursive_rag_agent(question, vdb_recursive)
-            end_time = time.time()
-            execution_time = end_time - start_time
-            debug_info(f"DEBUG: Recursive RAG agent execution time: {execution_time:.4f} seconds")
-            return {"next_agent": current_agent, "answer": answer}
-    else:
-        current_agent = router_response
-        return {"next_agent": current_agent, "answer": f"({current_agent}) Great! What is your question?"}
+    while 1:
+        if router_response == "current":
+            if current_agent == "text_to_sql_agent":
+                start_time = time.time()
+                answer = text_to_sql_agent(text2sql_chat_history, db)
+                end_time = time.time()
+                execution_time = end_time - start_time
+                # debug_info(f"DEBUG: Text to SQL agent execution time: {execution_time:.4f} seconds", to_print=debug_to_print)
+                return {"next_agent": current_agent, "answer": answer}
+            elif current_agent == "multimodal_rag_agent":
+                start_time = time.time()
+                answer, results_transcript_string, results_media_string = multimodal_rag_agent(question, vdb_multimodal)
+                end_time = time.time()
+                execution_time = end_time - start_time
+                # debug_info(f"DEBUG: Multimodal RAG agent execution time: {execution_time:.4f} seconds", to_print=debug_to_print)
+                return {"next_agent": current_agent, "answer": answer, "results_transcript_string": f"\n\n[Results from video transcript:\n{results_transcript_string}\n]\n\n", "results_media_string": f"\n\n[Results from video media:\n{results_media_string}\n]"}
+            elif current_agent == "recursive_rag_agent":
+                start_time = time.time()
+                answer = recursive_rag_agent(question, vdb_recursive)
+                end_time = time.time()
+                execution_time = end_time - start_time
+                # debug_info(f"DEBUG: Recursive RAG agent execution time: {execution_time:.4f} seconds", to_print=debug_to_print)
+                return {"next_agent": current_agent, "answer": answer}
+        else:
+            current_agent = router_response
+            router_response = "current"
+            continue
+            # return {"next_agent": current_agent, "answer": f"ROUTER"}#({current_agent}) Great! What is your question?
 

@@ -1,0 +1,171 @@
+[
+    {
+        "name": "Introduction to Interactive Technical Manuals (ITMs)",
+        "start_phrase": "Hello, my name is JR, and",
+        "finish_phrase": "where we can technologically store all the technical information that we need.",
+        "full_text": "Hello, my name is JR, and I'm with CFC Industrial Training. CFC produces Interactive Electronic Technical Manuals. We've abbreviated that, and we call our software product an Interactive Technical Manual, even shorter, an ITM. So ITMs were created from military specifications in the late 80s, shortly after PCs or personal computers became mainstream. Shortly thereafter, they were used in business and industry, and the military, specifically the Navy, wanted a way to capture all the technical documentation. They wanted a way to capture all the technical documentation on all of their high -value equipment and electronically store that. So they created a MIL -SPEC, or a military specification, on Interactive Electronic Technical Manuals. They were very expensive to produce back in the late 80s, and over the years, technology has advanced to the point where we can technologically store all the technical information that we need.",
+        "start_timestamp": 12.62,
+        "end_timestamp": 91.76,
+        "start_timestamp_hhmmss": "00:00:12",
+        "end_timestamp_hhmmss": "00:01:31"
+    },
+    {
+        "name": "Purpose and Benefits of ITMs",
+        "start_phrase": "So actually we can fully communicate",
+        "finish_phrase": "minimize downtime.",
+        "full_text": "So actually we can fully communicate which part of which information we have that iscial. And we can then encrypt that information on the state and hybrid traffic. And we know that there's a lot of information that isual information is\u30b9\u30c8 Sage net and then from your data to your internet information. And then the platform from nineteen sixty to verk Zapad Winter is eight years old. I'll show you schematics, service manuals, and package those documents and all of that collateral into a HTML5 format so that those critical technical documents can be delivered to the point of utilization, be it an engineer or an operator or a technician. A technician who's troubleshooting a machine. We need a way to quickly and effectively deliver meaningful documentation and training for a multitude of different reasons, be it education when you're troubleshooting a high value target. You need specific technical and troubleshooting information on your complex automation system. Systems to effectively help technicians and operators and engineers solve problems quickly on the floor, which will minimize downtime.",
+        "start_timestamp": 94.98,
+        "end_timestamp": 195.02,
+        "start_timestamp_hhmmss": "00:01:34",
+        "end_timestamp_hhmmss": "00:03:15"
+    },
+    {
+        "name": "Applications and Versatility of ITMs",
+        "start_phrase": "And I say on the floor,",
+        "finish_phrase": "when they need it and where they need it.",
+        "full_text": "And I say on the floor, it doesn't really matter where you're at. If you're, you know, on a piece of agricultural equipment or mining equipment, front end loader, it really doesn't matter whether it's an industrial or a mobile application, we're able to capture all the schematics, technical details and augment that with additional training and troubleshooting collateral to create a powerful online or cloud based document that can assist your folks in understanding and building complex automations. It doesn't really matter whether it's electromechanical or pneumatic or hydraulic. We're able to take that information, repackage that in a deliverable format so that your folks have access to that when they need it and where they need it.",
+        "start_timestamp": 195.26,
+        "end_timestamp": 266.4,
+        "start_timestamp_hhmmss": "00:03:15",
+        "end_timestamp_hhmmss": "00:04:26"
+    },
+    {
+        "name": "ITM Interface and Navigation",
+        "start_phrase": "This particular interactive technical manual is",
+        "finish_phrase": "drive you to a different web page.",
+        "full_text": "This particular interactive technical manual is designed as a demo. But along the left hand side of the screen, you'll see these clickable tabs. So each one of these clickable tabs has a subset of information that's clickable to the user. So any of your videos, PDF documentation, troubleshooting charts, technical tips, complete bill of materials, photo navigation, so you're able to quickly locate subsystems and components through digital photography. All of your mechanical drawings, your 3D drawings can be housed in the mechanical assembly section, your schematics and then a homepage. Along the bottom, you can see we have specific clickable tabs that you can click on and that can drive you to an original service manual, a help screen, a hotline. We can even attach a URL to that and drive you to a different web page.",
+        "start_timestamp": 266.56,
+        "end_timestamp": 338.88,
+        "start_timestamp_hhmmss": "00:04:26",
+        "end_timestamp_hhmmss": "00:05:38"
+    },
+    {
+        "name": "Enhanced Schematics and Animations",
+        "start_phrase": "If you're looking at all the",
+        "finish_phrase": "flows get metered.",
+        "full_text": "If you're looking at all the different schematics on the machine, we have a hydraulic double sided trainer that we have a schematic on and we colored and animated the schematic. So as the hydraulic circuit, the fluids traveling through the hydraulic circuit, it's animated. We've also augmented the schematic and included a 3D representation of the components to enhance the schematic and make the schematic more user friendly depending on what your application might be. We enhance those schematics. There's color standards for hydraulic and pneumatic drawings and we'll add color to that particular drawing so that it's intuitive to your technicians and engineers and you can exactly what line should be pressure, what flow should be metered, what pressure should be reduced. Color augments the schematic documentation and makes the experience of reading and understanding fluid power and electrical circuits far more intuitive when they're colored. It really helps the technicians and engineers understand the 4D systems well which One of the other things we can do with schematics is we can separate them out for a particular operating status. So as hydraulic actuators or pneumatic actuators move in a circuit, we can put the circuit in that particular animated state or that operating condition so that As valves shift, pressure changes take place, flows get metered.",
+        "start_timestamp": 339.16,
+        "end_timestamp": 458.1,
+        "start_timestamp_hhmmss": "00:05:39",
+        "end_timestamp_hhmmss": "00:07:38",
+        "media": "enhanced_schematics_and_animations.png",
+        "media_description": "This image showcases the ITM's schematic interface, displaying a complex hydraulic system diagram. The left side shows navigation options like Home, Schematics, and Mechanical Assembly. The main area presents a detailed schematic with various components, pressure settings, and flow paths. At the top, there are options for 'Print | Operating Status' and 'Toggle Hotspots,' demonstrating the interactive nature of the schematic. This illustrates how the ITM allows users to view and interact with detailed technical diagrams, facilitating understanding of complex systems."
+    },
+    {
+        "name": "Component Sheets and Hotspots",
+        "start_phrase": "We illustrate that on the animated",
+        "finish_phrase": "understand how to troubleshoot it.",
+        "full_text": "We illustrate that on the animated schematic that helps the user interpret what's exactly going on in that subcircuit. We also place hotspots, what we call a hotspot, on all of the major components in that particular machine or subcircuit. So as if you're having an issue with a pump, there's the hotspot that identifies the pump. You can click on that hotspot, and that brings what we call a component sheet up. So we'll take digital photography of all the major components in the system, and then we'll make a component sheet out of it. So the part number, the description, a function. The text of what that component is and does for you is included, and then also safety information in the event it's a hazardous environment and the technician or engineer needs to be made aware of safety issues that may be associated with a particular component or subsystem. Up in the top left corner, you can see there's a description of that component. And then you have additional buttons you can click on, and that drives you to additional information on that subsystem or component. For example, this is a variable displacement pressure compensated hydraulic pump. And it's got some complexity, and technicians who are working on that need to know how the settings on this particular pump, function, and how to troubleshoot that. So it's critical that you give them as much information as possible on more complex components or subsystems so that they can understand exactly how that component works. And it helps them more quickly and effectively understand the system and understand how to troubleshoot it.",
+        "start_timestamp": 458.12,
+        "end_timestamp": 595.48,
+        "start_timestamp_hhmmss": "00:07:38",
+        "end_timestamp_hhmmss": "00:09:55",
+        "media": "component_sheets_and_hotspots.png",
+        "media_description": "This image displays a component sheet for a 'Pressure Compensated Pump w/ Horsepower Control.' It shows how the ITM integrates various types of information for each component. The interface includes options for accessing a bulletin, info videos, primary schematic, photo, and BOM (Bill of Materials). The right side shows a photograph of the actual pump with a yellow highlight box. Below the image are fields for Description, Part Number, and Function. This demonstrates how the ITM provides comprehensive information about individual components, including technical details and visual references."
+
+    },
+    {
+        "name": "Photo Navigation Feature",
+        "start_phrase": "One of the other unique features",
+        "finish_phrase": "what the operating pressure should be.",
+        "full_text": "One of the other unique features of an interactive technical manual is what we call photo navigation. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. So through digital photography, I'm able to capture specific photos. Test their directional and proportional control valves with this test stand. So we designed and built the test stand, but also we use it as a demo to demonstrate how our interactive technical manual features work. So with the photo navigation, we have a digital photograph of the test stand, and then there's those hotspots again. So you can click on these hotspots directly from a digital photograph and bring up that same component sheet that describes how that particular component works. So this happened to be a relief valve. So click on that and bring up the component photo. If you wanted information on that, we tie the cut sheet. This happened to be a sun relief valve. And then even though I got to the component sheet through digital photography, now I can click on the schematic and then that component's highlighted so that I can find that component on the schematic itself. So if I'm trying to troubleshoot, I could turn the hotspots off and then put the system in a particular operating condition. And look at where pressure's supposed to be. And then I can also indicate what the operating pressure should be.",
+        "start_timestamp": 674.7,
+        "end_timestamp": 816.26,
+        "start_timestamp_hhmmss": "00:11:14",
+        "end_timestamp_hhmmss": "00:13:36",
+        "media": "photo_navigation_feature.png",
+        "media_description": "This image illustrates the ITM's photo navigation capability, showing a clear photograph of a 'Test Stand Front.' The left side maintains the consistent navigation menu seen in previous images. The main area displays a high-quality image of a hydraulic test stand, allowing users to visually identify different components. This feature likely allows users to click on different parts of the image to access more detailed information about specific components, demonstrating how the ITM facilitates intuitive, visual-based navigation of complex equipment."
+    },
+    {
+        "name": "Integration with IoT and Real-time Data",
+        "start_phrase": "One of the other features integral",
+        "finish_phrase": "monitoring of a given piece of automation.",
+        "full_text": "One of the other features integral to the interactive technical manual is the use of URLs. More and more popular or advanced applications today, you're seeing the use of, you know, the industrial IoT, Internet of Things -enabled componentry. So if you have a wired component, whereas you've got a transducer, or you have a particular component that's feeding real -time data to a dashboard or a web page, we have the ability through the use of assigning URLs to the component tree. to a component or subsystem to drive you directly to that real -time data. So, you know, on the schematic, you saw the symbol for the flow meter, and then integral to that, there's a clickable URL button to real -time data that can describe exactly what the flow is at a given point in the system. So, through all of your connected devices, you can use the interactive technical manual to navigate to those particular wired components, and that'd be an integral part of your troubleshooting or monitoring of a given piece of automation.",
+        "start_timestamp": 816.5,
+        "end_timestamp": 917.3,
+        "start_timestamp_hhmmss": "00:13:36",
+        "end_timestamp_hhmmss": "00:15:17"
+    },
+    {
+        "name": "Part Tracking and Procurement",
+        "start_phrase": "So, through the use of URLs,",
+        "finish_phrase": "store location within a particular factory.",
+        "full_text": "So, through the use of URLs, we're able to link you to those components that you want critical data. Data collected on them. So, one of the other things is being able to track obsolescence and part numbers and drive your technicians and users to a particular website for replacement procurement. So, we can also use the URL or the linkable function to actually drive the user to a purchase component. We can actually see that each part of the component's and their component's names there, where you have parts that are interchangeable or being swapped out, you can drive the user specifically to a component in that process that is your most current component that you want the user to repurchase, to replace. And then any instructional information, when you replace that component or sub -assembly, you can also tie that in as well. It's a very intuitive way to track the actual system operating condition and drive the technician to the point of purchase the way you want and provide an automated way so that that function is very efficient and mistakes aren't made along the way in collecting which part number is correct or is that part obsolete? That's all handled in the background and then the user's driven to a particular clickable link that is controlled by the OEM or the distributor or whomever you want to drive that particular, or a store even, we've had it driven to a store location within a particular factory.",
+        "start_timestamp": 917.74,
+        "end_timestamp": 1062.1,
+        "start_timestamp_hhmmss": "00:15:17",
+        "end_timestamp_hhmmss": "00:17:42"
+    },
+    {
+        "name": "Bill of Materials and Troubleshooting",
+        "start_phrase": "So also you have a linkable",
+        "finish_phrase": "make machine maintenance way more efficient.",
+        "full_text": "So also you have a linkable bill of materials. So all of your subsystems have sub categories where the bill of materials, the component sheet, the schematic, the cut sheets, all of that information is linkable through a linkable bill of materials that's created and integral through the bill of materials touch button. We can also include customized or generic, troubleshooting flowcharts. So in the process of troubleshooting a particular problem, you could click on a link and then that particular link have a list of different symptoms that your technician or engineer may be experiencing and then a way to provide information to the technician and then a way to provide information to the technician to help them with the troubleshooting process. So we have generic troubleshooting information on some components. We can also create custom troubleshooting, flow charting or information, integral troubleshooting video that really helps engineers and technicians in the process of troubleshooting systems or components. So adding integral troubleshooting video and creating troubleshooting documentation is a way to add value to the equipment and make machine maintenance way more efficient.",
+        "start_timestamp": 1070.96,
+        "end_timestamp": 1167.48,
+        "start_timestamp_hhmmss": "00:17:50",
+        "end_timestamp_hhmmss": "00:19:27"
+    },
+    {
+        "name": "Documentation Repository",
+        "start_phrase": "We also have a repository for",
+        "finish_phrase": "how to mitigate a particular concern or problem.",
+        "full_text": "We also have a repository for any documentation that you may want to include. User manuals from different sub -suppliers, equipment could be placed in here, certifications, calibration charts, anything that you want to have access to and keep accurate, records of, can be placed in the documentation section. All of the different cut sheets for all the individual components and subsystems. You know the proportional valve trainer had a proportional valve driver. So within there if you were just specifically looking for information on the proportional valve, electronic control card, you could go directly to that from within the documentation section. Or if you were doing training and you wanted to reference specifically specific troubleshooting or training video that was created on that subsystem or component, you could go directly to the multimedia section and then pull up the video on how to replace that particular component. So you know we can shoot instructional video specifically on the component, the system, the subsystem, how to troubleshoot, how the thing works, how to mitigate a particular concern or problem.",
+        "start_timestamp": 1167.72,
+        "end_timestamp": 1254.12,
+        "start_timestamp_hhmmss": "00:19:27",
+        "end_timestamp_hhmmss": "00:20:54",
+        "media": "documentation_repository.png",
+        "media_description": "This image showcases the user interface of the Interactive Technical Manual (ITM). The left side of the screen displays a menu with various options such as Home, Schematics, Mechanical Assembly, Photo Nav, Bill of Materials, Troubleshooting, and Documentation. The main area shows a technical drawing of an electronic device with detailed measurements. This illustrates how the ITM provides easy access to technical specifications and diagrams, demonstrating the system's capability to store and present complex technical information efficiently."
+    },
+    {
+        "name": "Conclusion and Additional Features",
+        "start_phrase": "So it's really a flexible tool",
+        "finish_phrase": "get additional information on that particular component.",
+        "full_text": "So it's really a flexible tool in terms of helping the technician do his job. We also have a way to link to whatever content you want to place on a particular piece of equipment. Any overview or descriptive video or documentation can go on the home screen. And then we also have a help button in the event the user all else fails. Typically we'll include a help button that can drive the user to a website or provide contact information on a particular expert or hotline to get additional information on that particular component.",
+        "start_timestamp": 1254.54,
+        "end_timestamp": 1300.36,
+        "start_timestamp_hhmmss": "00:20:54",
+        "end_timestamp_hhmmss": "00:21:40"
+    },
+    {
+        "name": "Enhanced Schematics and Animations - Media",
+        "media": "enhanced_schematics_and_animations.png",
+        "full_text": "This image showcases the ITM's schematic interface, displaying a complex hydraulic system diagram. The left side shows navigation options like Home, Schematics, and Mechanical Assembly. The main area presents a detailed schematic with various components, pressure settings, and flow paths. At the top, there are options for 'Print | Operating Status' and 'Toggle Hotspots,' demonstrating the interactive nature of the schematic. This illustrates how the ITM allows users to view and interact with detailed technical diagrams, facilitating understanding of complex systems.",
+        "type": "media",
+        "start_timestamp": 339.16,
+        "end_timestamp": 458.1,
+        "start_timestamp_hhmmss": "00:05:39",
+        "end_timestamp_hhmmss": "00:07:38"
+    },
+    {
+        "name": "Component Sheets and Hotspots - Media",
+        "media": "component_sheets_and_hotspots.png",
+        "full_text": "This image displays a component sheet for a 'Pressure Compensated Pump w/ Horsepower Control.' It shows how the ITM integrates various types of information for each component. The interface includes options for accessing a bulletin, info videos, primary schematic, photo, and BOM (Bill of Materials). The right side shows a photograph of the actual pump with a yellow highlight box. Below the image are fields for Description, Part Number, and Function. This demonstrates how the ITM provides comprehensive information about individual components, including technical details and visual references.",
+        "type": "media",
+        "start_timestamp": 458.12,
+        "end_timestamp": 595.48,
+        "start_timestamp_hhmmss": "00:07:38",
+        "end_timestamp_hhmmss": "00:09:55"
+    },
+    {
+        "name": "Photo Navigation Feature - Media",
+        "media": "photo_navigation_feature.png",
+        "full_text": "This image illustrates the ITM's photo navigation capability, showing a clear photograph of a 'Test Stand Front.' The left side maintains the consistent navigation menu seen in previous images. The main area displays a high-quality image of a hydraulic test stand, allowing users to visually identify different components. This feature likely allows users to click on different parts of the image to access more detailed information about specific components, demonstrating how the ITM facilitates intuitive, visual-based navigation of complex equipment.",
+        "type": "media",
+        "start_timestamp": 674.7,
+        "end_timestamp": 816.26,
+        "start_timestamp_hhmmss": "00:11:14",
+        "end_timestamp_hhmmss": "00:13:36"
+    },
+    {
+        "name": "Documentation Repository - Media",
+        "media": "documentation_repository.png",
+        "full_text": "This image showcases the user interface of the Interactive Technical Manual (ITM). The left side of the screen displays a menu with various options such as Home, Schematics, Mechanical Assembly, Photo Nav, Bill of Materials, Troubleshooting, and Documentation. The main area shows a technical drawing of an electronic device with detailed measurements. This illustrates how the ITM provides easy access to technical specifications and diagrams, demonstrating the system's capability to store and present complex technical information efficiently.",
+        "type": "media",
+        "start_timestamp": 1167.72,
+        "end_timestamp": 1254.12,
+        "start_timestamp_hhmmss": "00:19:27",
+        "end_timestamp_hhmmss": "00:20:54"
+    }
+]

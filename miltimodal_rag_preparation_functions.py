@@ -195,6 +195,33 @@ def process_segments(segments_file, word_timestamps_file):
         json.dump(segments, file, indent=4)
 
 
+def add_screenshot_descriptions_to_segments(segments_file, screenshots_descriptions_file):
+    # Load existing segments
+    with open(segments_file, 'r') as file:
+        segments = json.load(file)
+
+    # Load screenshot descriptions
+    with open(screenshots_descriptions_file, 'r') as file:
+        screenshots_descriptions = json.load(file)
+
+    # Create new segments for each screenshot description
+    for media, description in screenshots_descriptions.items():
+        new_segment = {
+            "name": media.replace('_', ' ').title(),
+            "full_text": description,
+            "media": f"{media}.png",
+            "media_description": description,
+            "type": "media"
+        }
+        segments.append(new_segment)
+
+    # Save updated segments back to file
+    with open(segments_file, 'w') as file:
+        json.dump(segments, file, indent=4)
+
+    print(f"Added {len(screenshots_descriptions)} screenshot descriptions to segments.")
+
+
 def convert_to_hhmmss(seconds):
     if seconds is None:
         return None
